@@ -43,4 +43,4 @@ jobs:
         if: steps.merge.outputs.changed == 'true' || inputs.force_deploy
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run deploy-cloudflare.yml --ref main
+        run: gh workflow run deploy-cloudflare.yml --ref main --repo "$GITHUB_REPOSITORY"
